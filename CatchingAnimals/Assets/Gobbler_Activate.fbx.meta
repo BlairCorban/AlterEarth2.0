@@ -1,0 +1,314 @@
+fileFormatVersion: 2
+guid: 60a70feb502a0d046b81865f5fb2b8cd
+timeCreated: 1522075519
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Barrel_Handle
+    100002: Barrel_Joint
+    100004: BaseMesh
+    100006: Chamber_Handle
+    100008: Chamber_Joint
+    100010: cluster1Handle
+    100012: Gobbler1
+    100014: //RootNode
+    100016: Gobbler_Chamber
+    100018: Gobbler_Chamber 1
+    100020: Gobbler_Handle_Joint
+    100022: GobblerGroup
+    100024: group1
+    100026: Helm_Handle
+    100028: Helm_Joint
+    100030: Jaw_Handle
+    100032: Jaw_Joint
+    100034: Left_Clavicle
+    100036: Left_Elbow
+    100038: Left_Index1
+    100040: Left_Index2
+    100042: Left_IndexKnuckle
+    100044: Left_IndexTip
+    100046: Left_Middle1
+    100048: Left_Middle2
+    100050: Left_MiddleKnuckle
+    100052: Left_MiddleTip
+    100054: Left_Pinky1
+    100056: Left_Pinky2
+    100058: Left_PinkyKnuckle
+    100060: Left_PinkyTip
+    100062: Left_Ring1
+    100064: Left_Ring2
+    100066: Left_RingKnuckle
+    100068: Left_RingTip
+    100070: Left_Shoulder
+    100072: Left_ThumbKnuckle
+    100074: Left_ThumbMid
+    100076: Left_ThumbTip
+    100078: Left_Wrist
+    100080: polySurface1
+    100082: polySurface1 1
+    100084: polySurface10
+    100086: polySurface11
+    100088: polySurface12
+    100090: polySurface13
+    100092: polySurface14
+    100094: polySurface2
+    100096: polySurface3
+    100098: polySurface4
+    100100: polySurface4 1
+    100102: polySurface5
+    100104: polySurface6
+    100106: polySurface7
+    100108: polySurface8
+    100110: polySurface9
+    100112: Right_Clavicle
+    100114: Right_Elbow
+    100116: Right_Index1
+    100118: Right_Index2
+    100120: Right_IndexKnuckle
+    100122: Right_IndexTip
+    100124: Right_Middle1
+    100126: Right_Middle2
+    100128: Right_MiddleKnuckle
+    100130: Right_MiddleTip
+    100132: Right_Pinky1
+    100134: Right_Pinky2
+    100136: Right_PinkyKnuckle
+    100138: Right_PinkyTip
+    100140: Right_Ring1
+    100142: Right_Ring2
+    100144: Right_RingKnuckle
+    100146: Right_RingTip
+    100148: Right_Shoulder
+    100150: Right_ThumbKnuckle
+    100152: Right_ThumbMid
+    100154: Right_ThumbTip
+    100156: Right_Wrist
+    100158: Root_Upper_Spine
+    100160: transform1
+    100162: transform10
+    100164: transform11
+    100166: transform12
+    100168: transform13
+    100170: transform14
+    100172: transform15
+    100174: transform16
+    100176: transform17
+    100178: transform2
+    100180: transform5
+    100182: transform6
+    100184: transform7
+    100186: transform8
+    100188: transform9
+    400000: Barrel_Handle
+    400002: Barrel_Joint
+    400004: BaseMesh
+    400006: Chamber_Handle
+    400008: Chamber_Joint
+    400010: cluster1Handle
+    400012: Gobbler1
+    400014: //RootNode
+    400016: Gobbler_Chamber
+    400018: Gobbler_Chamber 1
+    400020: Gobbler_Handle_Joint
+    400022: GobblerGroup
+    400024: group1
+    400026: Helm_Handle
+    400028: Helm_Joint
+    400030: Jaw_Handle
+    400032: Jaw_Joint
+    400034: Left_Clavicle
+    400036: Left_Elbow
+    400038: Left_Index1
+    400040: Left_Index2
+    400042: Left_IndexKnuckle
+    400044: Left_IndexTip
+    400046: Left_Middle1
+    400048: Left_Middle2
+    400050: Left_MiddleKnuckle
+    400052: Left_MiddleTip
+    400054: Left_Pinky1
+    400056: Left_Pinky2
+    400058: Left_PinkyKnuckle
+    400060: Left_PinkyTip
+    400062: Left_Ring1
+    400064: Left_Ring2
+    400066: Left_RingKnuckle
+    400068: Left_RingTip
+    400070: Left_Shoulder
+    400072: Left_ThumbKnuckle
+    400074: Left_ThumbMid
+    400076: Left_ThumbTip
+    400078: Left_Wrist
+    400080: polySurface1
+    400082: polySurface1 1
+    400084: polySurface10
+    400086: polySurface11
+    400088: polySurface12
+    400090: polySurface13
+    400092: polySurface14
+    400094: polySurface2
+    400096: polySurface3
+    400098: polySurface4
+    400100: polySurface4 1
+    400102: polySurface5
+    400104: polySurface6
+    400106: polySurface7
+    400108: polySurface8
+    400110: polySurface9
+    400112: Right_Clavicle
+    400114: Right_Elbow
+    400116: Right_Index1
+    400118: Right_Index2
+    400120: Right_IndexKnuckle
+    400122: Right_IndexTip
+    400124: Right_Middle1
+    400126: Right_Middle2
+    400128: Right_MiddleKnuckle
+    400130: Right_MiddleTip
+    400132: Right_Pinky1
+    400134: Right_Pinky2
+    400136: Right_PinkyKnuckle
+    400138: Right_PinkyTip
+    400140: Right_Ring1
+    400142: Right_Ring2
+    400144: Right_RingKnuckle
+    400146: Right_RingTip
+    400148: Right_Shoulder
+    400150: Right_ThumbKnuckle
+    400152: Right_ThumbMid
+    400154: Right_ThumbTip
+    400156: Right_Wrist
+    400158: Root_Upper_Spine
+    400160: transform1
+    400162: transform10
+    400164: transform11
+    400166: transform12
+    400168: transform13
+    400170: transform14
+    400172: transform15
+    400174: transform16
+    400176: transform17
+    400178: transform2
+    400180: transform5
+    400182: transform6
+    400184: transform7
+    400186: transform8
+    400188: transform9
+    4300000: polySurface8
+    4300002: polySurface9
+    4300004: polySurface11
+    4300006: BaseMesh
+    4300008: polySurface1
+    4300010: polySurface4
+    7400000: Gobbler-Activate
+    9500000: //RootNode
+    13700000: BaseMesh
+    13700002: polySurface1
+    13700004: polySurface11
+    13700006: polySurface4
+    13700008: polySurface8
+    13700010: polySurface9
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Gobbler-Activate
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 35
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
