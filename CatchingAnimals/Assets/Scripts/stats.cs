@@ -11,6 +11,7 @@ public class stats : MonoBehaviour {
     public static int batteries;
     public static bool canfire;
 	public static bool isospcaptured;
+    public static int woodInventory;
 	public GameObject gun1;
 	public GameObject gun2;
 	public bool isgun1;
@@ -32,14 +33,15 @@ public class stats : MonoBehaviour {
         AmmoInt = 6;
 		isgun1 = true;
 		isospcaptured = false;
+        woodInventory = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
+        Debug.Log(woodInventory);
 
 		idol.text = idolscollected.ToString();
-		bush.text = capturedmobs.ToString();
+		bush.text = woodInventory.ToString();
 		if (isospcaptured) {
 			osprey.text = "1";
 		} 
@@ -51,7 +53,7 @@ public class stats : MonoBehaviour {
 
 
 
-		if (Input.GetKeyDown (KeyCode.E)) {
+		if (Input.GetKeyDown (KeyCode.Q)) {
 			if (isgun1) {
 				gun1.SetActive (false);
 				gun2.SetActive (true);
