@@ -16,13 +16,22 @@ public class collectItem : MonoBehaviour {
             RaycastHit hit;
             Ray ray = camera.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray, out hit, 10))
+            if (Physics.Raycast(ray, out hit, 5))
             {
-                GameObject objectHit = hit.transform.gameObject;
+                Transform objectHit = hit.transform;
                 if(objectHit.name == "wood" || objectHit.name == "wood(Clone)")
                 {
-                    Destroy(objectHit);
+                    Destroy(objectHit.gameObject);
                     stats.woodInventory += 1;
+                }
+                else if(objectHit.name == "house")
+                {
+                    if(stats.woodInventory >= 5)
+                    {
+
+                        objectHit.localScale = objectHit.localScale + objectHit.localScale;
+                        stats.woodInventory -= 5;
+                    }
                 }
                 
             }

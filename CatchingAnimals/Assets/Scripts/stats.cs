@@ -21,7 +21,7 @@ public class stats : MonoBehaviour {
 	public Text osprey;
 	public Text ammotxt;
 	public Text batteriestxt;
-
+    public int speedMultiplier;
 	// Use this for initialization
 	void Start () {
         bushmobs = 0;
@@ -38,9 +38,9 @@ public class stats : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(woodInventory);
+        //RenderSettings.skybox.SetFloat("_Rotation", Time.time * speedMultiplier);
 
-		idol.text = idolscollected.ToString();
+        idol.text = idolscollected.ToString();
 		bush.text = woodInventory.ToString();
 		if (isospcaptured) {
 			osprey.text = "1";
