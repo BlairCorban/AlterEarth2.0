@@ -8,22 +8,22 @@ public class PlayerShoot : MonoBehaviour {
 	public GameObject prefab;
 	// Use this for initialization
 	void Start () {
-		Debug.Log (stats.AmmoInt);
+		Debug.Log (PlayerHandler.AmmoInt);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.Mouse0))
 		{
-            if(stats.canfire)
+            if(PlayerHandler.canfire)
             {
-                if (stats.AmmoInt > 0)
+                if (PlayerHandler.AmmoInt > 0)
 			    {
 				    Instantiate (prefab, trself.position, trself.rotation);
-                    stats.AmmoInt -= 1;
-                    Debug.Log(stats.AmmoInt);
-                    Debug.Log("batteries: " + stats.batteries);
-                    stats.canfire = false;
+                    PlayerHandler.AmmoInt -= 1;
+                    Debug.Log(PlayerHandler.AmmoInt);
+                    Debug.Log("batteries: " + PlayerHandler.batteries);
+                    PlayerHandler.canfire = false;
                     Invoke("firerate", .5f);
 			    }
             }
@@ -31,17 +31,17 @@ public class PlayerShoot : MonoBehaviour {
 		}
 		if (Input.GetKeyDown (KeyCode.R))
 		{
-            if(stats.batteries>0)
+            if(PlayerHandler.batteries>0)
             {
-                stats.AmmoInt = 6;
-                Debug.Log(stats.AmmoInt);
-                stats.batteries -= 1;
+                PlayerHandler.AmmoInt = 6;
+                Debug.Log(PlayerHandler.AmmoInt);
+                PlayerHandler.batteries -= 1;
             }
 			
 		}
 	}
     void firerate()
     {
-        stats.canfire = true;
+        PlayerHandler.canfire = true;
     }
 }

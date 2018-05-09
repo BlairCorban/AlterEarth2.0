@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1214332528}
-  m_IndirectSpecularColor: {r: 0.43296167, g: 0.4788462, b: 0.5358053, a: 1}
+  m_IndirectSpecularColor: {r: 0.4329629, g: 0.47884738, b: 0.53580624, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1379,7 +1379,7 @@ GameObject:
   m_Component:
   - component: {fileID: 235180044}
   m_Layer: 0
-  m_Name: endofgun
+  m_Name: endofgunTASER
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3074,6 +3074,10 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 8b2268bb2dba7a143b49ced4da12de21, type: 2}
+    - target: {fileID: 100002, guid: 7441c58cef13f1d429896cef066b56ef, type: 3}
+      propertyPath: m_Name
+      value: NETGUN
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7441c58cef13f1d429896cef066b56ef, type: 3}
   m_IsPrefabParent: 0
@@ -3760,20 +3764,6 @@ Animator:
   m_PrefabParentObject: {fileID: 95310035744871248, guid: adb6ece1918924c4dae3f61fbe4c0632,
     type: 2}
   m_PrefabInternal: {fileID: 1851478166}
---- !u!114 &938407529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 938407525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0adb85071d982a49a619e0c2bd6fb3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isShoot: 0
-  trself: {fileID: 235180044}
-  prefab: {fileID: 1091550835688806, guid: 838f24fdf3ae4ae4982ac32632c9dba2, type: 2}
 --- !u!1 &939443624
 GameObject:
   m_ObjectHideFlags: 0
@@ -4638,20 +4628,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1077417350}
---- !u!114 &1077417352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1077417348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0adb85071d982a49a619e0c2bd6fb3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isShoot: 0
-  trself: {fileID: 1274991131}
-  prefab: {fileID: 1091550835688806, guid: 838f24fdf3ae4ae4982ac32632c9dba2, type: 2}
 --- !u!1 &1084899026
 GameObject:
   m_ObjectHideFlags: 0
@@ -5360,7 +5336,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1274991131}
   m_Layer: 0
-  m_Name: endofgun
+  m_Name: endofgunNET
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7424,6 +7400,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1939790602627168, guid: adb6ece1918924c4dae3f61fbe4c0632, type: 2}
+      propertyPath: m_Name
+      value: TASER
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: adb6ece1918924c4dae3f61fbe4c0632, type: 2}
   m_IsPrefabParent: 0
@@ -8577,6 +8557,40 @@ MeshFilter:
 GameObject:
   m_PrefabParentObject: {fileID: 100006, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 2}
   m_PrefabInternal: {fileID: 1355204365}
+--- !u!114 &2101306063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2101306060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4097cc879bd926b47a191dd039b595bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trself:
+  - {fileID: 235180044}
+  - {fileID: 1274991131}
+  prefab: {fileID: 1091550835688806, guid: 838f24fdf3ae4ae4982ac32632c9dba2, type: 2}
+--- !u!114 &2101306064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2101306060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1b07d053b21b034089125768f00b624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gun1: {fileID: 938407525}
+  gun2: {fileID: 1077417348}
+  idol: {fileID: 82081111}
+  bush: {fileID: 1874099221}
+  osprey: {fileID: 24574951}
+  ammotxt: {fileID: 567651796}
+  batteriestxt: {fileID: 1359431569}
+  speedMultiplier: 0
 --- !u!135 &2101306065
 SphereCollider:
   m_ObjectHideFlags: 0

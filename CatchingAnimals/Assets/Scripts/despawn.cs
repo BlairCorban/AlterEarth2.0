@@ -14,7 +14,7 @@ public class despawn : MonoBehaviour {
         {          
             Debug.Log("despawn!");
             Destroy(other.gameObject);
-            stats.bushmobs -= 1;
+            PlayerHandler.bushmobs -= 1;
         }
     }
 	

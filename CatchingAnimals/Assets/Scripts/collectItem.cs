@@ -22,15 +22,15 @@ public class collectItem : MonoBehaviour {
                 if(objectHit.name == "wood" || objectHit.name == "wood(Clone)")
                 {
                     Destroy(objectHit.gameObject);
-                    stats.woodInventory += 1;
+                    PlayerHandler.woodInventory += 1;
                 }
                 else if(objectHit.name == "house")
                 {
-                    if(stats.woodInventory >= 5)
+                    if(PlayerHandler.woodInventory >= 5)
                     {
 
                         objectHit.localScale = objectHit.localScale + objectHit.localScale;
-                        stats.woodInventory -= 5;
+                        PlayerHandler.woodInventory -= 5;
                     }
                 }
                 

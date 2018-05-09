@@ -18,10 +18,10 @@ public class creatureSpawner : MonoBehaviour {
 	}
     void SpawnObj()
     {
-        if(stats.bushmobs  <= 14)
+        if(PlayerHandler.bushmobs  <= 14)
         {
             Instantiate(prefab, new Vector3(tr.position.x, 41.481F, tr.position.z), Quaternion.identity);
-            stats.bushmobs += 1;
+            PlayerHandler.bushmobs += 1;
         }
         
     }

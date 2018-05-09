@@ -52,7 +52,7 @@ public class fleeosp : MonoBehaviour {
 	}
     void DespawnOsprey()
     {
-        stats.isOsp = false;
+        PlayerHandler.isOsp = false;
         Destroy(gameObject);
     }
 }

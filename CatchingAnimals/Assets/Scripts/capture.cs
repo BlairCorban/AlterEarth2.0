@@ -59,11 +59,11 @@ public class capture : MonoBehaviour {
                 tr.position = pen1;
                 creature.enabled = true;
                 agent.enabled = true;
-                stats.bushmobs -= 1;
-                stats.capturedmobs += 1;
+                PlayerHandler.bushmobs -= 1;
+                PlayerHandler.capturedmobs += 1;
                 //creature.wanderRadius = 1.5f;
                 isStunned = false;
-                stats.batteries += 1;
+                PlayerHandler.batteries += 1;
                 
             }
         }

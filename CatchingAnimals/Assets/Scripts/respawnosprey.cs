@@ -13,14 +13,14 @@ public class respawnosprey : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(!stats.isOsp)
+		if(!PlayerHandler.isOsp)
         {
             if(!sph.bounds.Contains(playertr.position))
             {
                 if(!GetComponent<MeshRenderer>().isVisible)
                 {
                     Instantiate(ospreyprefab,new Vector3(405.46f,44.09f,-44.51995f),ospreyprefab.transform.rotation);
-                    stats.isOsp = true;
+                    PlayerHandler.isOsp = true;
                 }
             }
         }

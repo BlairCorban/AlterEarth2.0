@@ -25,7 +25,7 @@ public class ospcapture : MonoBehaviour
             fleee.enabled = false;
             sph.enabled = false;
             isStunned = true;
-			stats.isospcaptured = true;
+			PlayerHandler.isospcaptured = true;
             zzz.SetActive(true);
         }
         if (other.tag == "Player")

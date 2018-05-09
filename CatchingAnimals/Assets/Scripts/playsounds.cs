@@ -13,9 +13,9 @@ public class playsounds : MonoBehaviour {
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.Mouse0))
         {
-            if(stats.canfire)
+            if(PlayerHandler.canfire)
             {
-                if(stats.AmmoInt >0)
+                if(PlayerHandler.AmmoInt >0)
                 {
                     src.Play();
                 }
