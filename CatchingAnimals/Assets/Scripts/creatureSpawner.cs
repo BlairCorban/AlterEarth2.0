@@ -9,7 +9,7 @@ public class creatureSpawner : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         amountCaptured = 0;
-        InvokeRepeating("SpawnObj", 0f, 30f);
+        InvokeRepeating("SpawnObj", 0f, 60f);
 	}
 	
 	// Update is called once per frame

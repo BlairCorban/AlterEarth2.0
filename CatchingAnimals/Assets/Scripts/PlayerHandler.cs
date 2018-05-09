@@ -45,8 +45,7 @@ public class PlayerHandler : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        
+    {        
         ammotxt.text = AmmoInt.ToString();
         batteriestxt.text = batteries.ToString();
 

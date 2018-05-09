@@ -22,6 +22,10 @@ public class stats : MonoBehaviour {
 	public Text ammotxt;
 	public Text batteriestxt;
     public int speedMultiplier;
+
+
+
+
 	// Use this for initialization
 	void Start () {
         bushmobs = 0;

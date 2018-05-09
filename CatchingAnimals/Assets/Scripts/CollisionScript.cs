@@ -6,7 +6,7 @@ public class CollisionScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Destroy(gameObject, 0.6f);
+        Destroy(gameObject, 1.5f);
 	}
 	
 	// Update is called once per frame

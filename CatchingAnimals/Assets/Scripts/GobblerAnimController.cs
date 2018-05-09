@@ -15,10 +15,6 @@ public class GobblerAnimController : MonoBehaviour {
 		{
 			anim.Play("Gobbler-Shoot");
 		}
-		if (Input.GetKeyDown ("e")) 
-		{
-			anim.Play("Gobbler-Deactivate");
-		}
 		if (Input.GetKeyDown ("q")) 
 		{
 			anim.Play("Gobbler-Activate");
