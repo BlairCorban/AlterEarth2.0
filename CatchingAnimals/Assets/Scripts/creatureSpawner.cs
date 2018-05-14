@@ -6,6 +6,7 @@ public class creatureSpawner : MonoBehaviour {
     public GameObject prefab;
     public Transform tr;
     public int amountCaptured;
+    public Transform Navmesh;
 	// Use this for initialization
 	void Start () {
         amountCaptured = 0;
@@ -20,7 +21,7 @@ public class creatureSpawner : MonoBehaviour {
     {
         if(PlayerHandler.bushmobs  <= 14)
         {
-            Instantiate(prefab, new Vector3(tr.position.x, 41.481F, tr.position.z), Quaternion.identity);
+            Instantiate(prefab, new Vector3(tr.position.x, Navmesh.position.y - 1.1f, tr.position.z), Quaternion.identity);
             PlayerHandler.bushmobs += 1;
         }
         

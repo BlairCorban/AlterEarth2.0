@@ -16,11 +16,9 @@ public class flee : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            Debug.Log("flee");
             creature.enabled = false;
             agent.speed = 20;
             agent.SetDestination(despawner);
-            Debug.Log(despawner);
         }
     }
 }

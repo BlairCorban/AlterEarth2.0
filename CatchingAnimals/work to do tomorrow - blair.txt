@@ -1,0 +1,4 @@
+make clone of bush monsters but just raised off the ground for ufo as a base
+sort the spawning with reference to the time of day
+sort out pen
+inventory screen
