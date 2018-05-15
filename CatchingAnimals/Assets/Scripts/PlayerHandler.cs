@@ -36,7 +36,7 @@ public class PlayerHandler : MonoBehaviour
         bushmobs = 0;
         UFOmobs = 0;
         capturedmobs = 0;
-        isOsp = false;
+        isOsp = true;
         batteries = 1;
         canfire = true;
         AmmoInt = 6;
