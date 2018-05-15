@@ -19,6 +19,7 @@ public class collectItem : MonoBehaviour {
             if (Physics.Raycast(ray, out hit, 5))
             {
                 Transform objectHit = hit.transform;
+                // if you press e on a wood destroy item and add 1 to wood value
                 if(objectHit.name == "wood" || objectHit.name == "wood(Clone)")
                 {
                     Destroy(objectHit.gameObject);
@@ -32,6 +33,11 @@ public class collectItem : MonoBehaviour {
                         objectHit.localScale = objectHit.localScale + objectHit.localScale;
                         PlayerHandler.woodInventory -= 5;
                     }
+                }
+                if (objectHit.name == "UFO" || objectHit.name == "UFO(Clone)")
+                {
+                    Destroy(objectHit.gameObject);
+                    PlayerHandler.electronicsInventory += 1;
                 }
                 
             }

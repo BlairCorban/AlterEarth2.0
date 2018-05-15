@@ -7,14 +7,17 @@ public class PlayerHandler : MonoBehaviour
 {
     public static PlayerHandler m_sControl;
     public static int bushmobs;
+    public static int UFOmobs;
     public static int capturedmobs;
     public static bool isOsp;
     public static int batteries;
     public static bool canfire;
     public static bool isospcaptured;
     public static int woodInventory;
+    public static int electronicsInventory;    
     public GameObject gun1;
     public GameObject gun2;
+    public GameObject Sun;
     public static bool isgun1;
     public static int AmmoInt;
     public Text idol;
@@ -23,12 +26,15 @@ public class PlayerHandler : MonoBehaviour
     public Text ammotxt;
     public Text batteriestxt;
     public int speedMultiplier;
+    public enum TOD {DAY, NIGHT};
     public enum currentWep {TASER, NETGUN };
     public static currentWep m_playerWep;
+    public static TOD m_timeOfDay;
     // Use this for initialization
     void Start()
     {
         bushmobs = 0;
+        UFOmobs = 0;
         capturedmobs = 0;
         isOsp = false;
         batteries = 1;
@@ -37,7 +43,8 @@ public class PlayerHandler : MonoBehaviour
         isgun1 = false;
         isospcaptured = false;
         woodInventory = 0;
-
+        electronicsInventory = 0;
+        m_timeOfDay = TOD.DAY;
         //m_playerWep = currentWep.NETGUN;
         gun1.SetActive(false);
         gun2.SetActive(true);
@@ -45,11 +52,20 @@ public class PlayerHandler : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {        
+    {
+        bush.text = woodInventory.ToString();
+        idol.text = electronicsInventory.ToString();
         ammotxt.text = AmmoInt.ToString();
         batteriestxt.text = batteries.ToString();
 
-
+        if(Sun.transform.position.y < 0)
+        {
+            m_timeOfDay = TOD.NIGHT;
+        }
+        else if (Sun.transform.position.y > 0)
+        {
+            m_timeOfDay = TOD.DAY;
+        }
 
 
 
@@ -64,7 +80,6 @@ public class PlayerHandler : MonoBehaviour
                         gun2.SetActive(true);
                         isgun1 = false;
                         //m_playerWep = currentWep.TASER;
-                        print("WEAPON SET TO NETFUN");
                         break;
                     }
                 case false:
@@ -72,7 +87,6 @@ public class PlayerHandler : MonoBehaviour
                         gun1.SetActive(true);
                         gun2.SetActive(false);
                         isgun1 = true;
-                        print("WEAPON SET TO TASER");
                         // m_playerWep = currentWep.NETGUN;
                         break;
                     }

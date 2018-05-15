@@ -12,16 +12,17 @@ public class capture : MonoBehaviour {
     public Animator anim;
     public flee fleee;
     public bool isStunned;
-    public Vector3 pen1;
+    public GameObject pen1;
 	// Use this for initialization
 	void Start () {
         isStunned = false;
+        pen1 = GameObject.Find("Fence");
 	}
 	void Update()
     {
         if (!(anim.GetCurrentAnimatorStateInfo(0).IsName("Walking")))
         {
-            if(agent.velocity != new Vector3 (0.0f,0.0f,0.0f))
+            if(agent.velocity != Vector3.zero)
             {
                 anim.Play("Walking", -1,0);
             }
@@ -31,7 +32,7 @@ public class capture : MonoBehaviour {
         {
             if(isStunned == false)
             {
-                if (agent.velocity == new Vector3(0.0f, 0.0f, 0.0f))
+                if (agent.velocity == Vector3.zero)
                 {
                     anim.Play("Idle1", -1, 0);
                 } 
@@ -56,7 +57,7 @@ public class capture : MonoBehaviour {
         {
             if(isStunned)
             {
-                tr.position = pen1;
+                tr.position = new Vector3(pen1.transform.position.x, 0, pen1.transform.position.z);
                 creature.enabled = true;
                 agent.enabled = true;
                 PlayerHandler.bushmobs -= 1;

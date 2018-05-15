@@ -15,7 +15,7 @@ public class CreatureController : MonoBehaviour
     void Start()
     {
         agent.enabled = false;
-        Invoke("EnableAgent", 0.5f);
+        Invoke("EnableAgent", 1f);
     }
     // Use this for initialization
     void OnEnable()

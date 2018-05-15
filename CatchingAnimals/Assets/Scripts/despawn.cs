@@ -9,9 +9,10 @@ public class despawn : MonoBehaviour {
 	}
     void OnTriggerEnter(Collider other)
     {
-        
+        Debug.Log("trigger");
         if (other.tag == "creature")
-        {          
+        {         
+ 
             Debug.Log("despawn!");
             Destroy(other.gameObject);
             PlayerHandler.bushmobs -= 1;
