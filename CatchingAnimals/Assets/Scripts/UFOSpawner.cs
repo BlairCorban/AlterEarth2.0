@@ -17,7 +17,7 @@ public class UFOSpawner : MonoBehaviour {
             {
                 if (!GetComponent<MeshRenderer>().isVisible)
                 {
-                    Instantiate(prefab, new Vector3(transform.position.x + 1, 0, transform.position.z + 1), Quaternion.identity);
+                    Instantiate(prefab, new Vector3(transform.position.x + 10, 0 , transform.position.z), Quaternion.identity);
                     PlayerHandler.UFOmobs += 1;
                 }
             }

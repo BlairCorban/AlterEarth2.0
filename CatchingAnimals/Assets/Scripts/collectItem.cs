@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class collectItem : MonoBehaviour {
     public Camera camera;
+    public GameObject saddle;
 	// Use this for initialization
 	void Start () {
 		
@@ -38,6 +39,18 @@ public class collectItem : MonoBehaviour {
                 {
                     Destroy(objectHit.gameObject);
                     PlayerHandler.electronicsInventory += 1;
+                }
+                if (objectHit.name == "Fruit")
+                {
+                    Destroy(objectHit.gameObject);
+                    PlayerHandler.fruitInventory += 1;
+                }
+                if (objectHit.name == "Ceph")
+                {
+                    if (PlayerHandler.fruitInventory >= 1)
+                    {
+                        saddle.SetActive(true);
+                    }
                 }
                 
             }

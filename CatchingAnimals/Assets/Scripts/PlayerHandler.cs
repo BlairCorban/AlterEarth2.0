@@ -14,7 +14,8 @@ public class PlayerHandler : MonoBehaviour
     public static bool canfire;
     public static bool isospcaptured;
     public static int woodInventory;
-    public static int electronicsInventory;    
+    public static int electronicsInventory;
+    public static int fruitInventory;
     public GameObject gun1;
     public GameObject gun2;
     public GameObject Sun;
@@ -44,6 +45,7 @@ public class PlayerHandler : MonoBehaviour
         isospcaptured = false;
         woodInventory = 0;
         electronicsInventory = 0;
+        fruitInventory = 0;
         m_timeOfDay = TOD.DAY;
         //m_playerWep = currentWep.NETGUN;
         gun1.SetActive(false);

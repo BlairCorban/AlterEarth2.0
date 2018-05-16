@@ -27,13 +27,13 @@ public class fleeUFO : MonoBehaviour {
             
             transform.parent.position += new Vector3(0, 20 * Time.deltaTime, 0);
         }
-        /*if (PlayerHandler.m_timeOfDay == PlayerHandler.TOD.DAY)
+        if (PlayerHandler.m_timeOfDay == PlayerHandler.TOD.DAY)
         {
             creature.enabled = false;
             agent.enabled = false;
             isflee = true;
             
-        }*/
+        }
     }
     void OnTriggerEnter(Collider other)
     {
