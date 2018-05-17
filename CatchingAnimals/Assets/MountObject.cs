@@ -49,49 +49,4 @@ public class MountObject : MonoBehaviour {
             }
         }
 	}
-
-    private void MoveObject(bool _bPostive, bool _bHorizontal)
-    {
-        int movement = 15;
-        switch(_bPostive)
-        {
-            case true:
-                {
-                    switch (_bHorizontal)
-                    {
-                        case true:
-                            {
-                                m_Direction = Vector3.right;
-                                break;
-                            }
-                        case false:
-                            {
-                                m_Direction = Vector3.forward;
-                                break;
-                            }
-                    }
-                    break;
-                }
-            case false:
-                {
-                    //movement * -1;
-                    switch (_bHorizontal)
-                    {
-                        case true:
-                            {
-                                m_Direction = Vector3.left;
-                                break;
-                            }
-                        case false:
-                            {
-                                m_Direction = Vector3.back;
-                                break;
-                            }
-                    }
-                    break;
-                }
-        }
-
-        this.transform.Translate(m_Direction * movement * Time.deltaTime);
-    }
 }

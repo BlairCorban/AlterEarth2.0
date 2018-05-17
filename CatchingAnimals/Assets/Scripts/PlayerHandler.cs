@@ -20,6 +20,7 @@ public class PlayerHandler : MonoBehaviour
     public GameObject gun1;
     public GameObject gun2;
     public GameObject Sun;
+    public GameObject Ceph; // simple bug fix
     public static bool isgun1;
     public static int AmmoInt;
     public Text idol;
@@ -33,8 +34,8 @@ public class PlayerHandler : MonoBehaviour
     public static currentWep m_playerWep;
     public static TOD m_timeOfDay;
 
-    private Camera m_FPScam;
-    private Camera m_mountedCam;
+    public Camera m_FPScam;
+    public Camera m_mountedCam;
     private Ray raycast;
 
     // Use this for initialization
@@ -57,8 +58,8 @@ public class PlayerHandler : MonoBehaviour
         //m_playerWep = currentWep.NETGUN;
         gun1.SetActive(false);
         gun2.SetActive(true);
-        m_FPScam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        m_mountedCam = GameObject.FindGameObjectWithTag("cephcamera").GetComponent<Camera>();
+       // m_FPScam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        //m_mountedCam = GameObject.FindGameObjectWithTag("cephcamera").GetComponent<Camera>();
         m_FPScam.enabled = true;
         m_mountedCam.enabled = false;
     }
@@ -85,7 +86,7 @@ public class PlayerHandler : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            HandlePlayerGun(false, false);
+            HandlePlayerGun(false);
         }
 
         if (Input.GetKeyDown(KeyCode.F))
@@ -97,7 +98,7 @@ public class PlayerHandler : MonoBehaviour
         }
     }
 
-    private void HandlePlayerGun(bool _bTurnGunsOff, bool _bReEnableGuns)
+    private void HandlePlayerGun(bool _bTurnGunsOff)
     {
         if (_bTurnGunsOff == false)
         {
@@ -123,80 +124,70 @@ public class PlayerHandler : MonoBehaviour
         }
         else
         {
-            if (_bReEnableGuns == false)
+            switch (isgun1)
             {
-                switch (isgun1)
-                {
-                    case true:
-                        {
-                            gun1.SetActive(false);
-                            gun2.SetActive(true);
-                            isgun1 = true;
-                            //m_playerWep = currentWep.TASER;
-                            break;
-                        }
-                    case false:
-                        {
-                            gun1.SetActive(true);
-                            gun2.SetActive(false);
-                            isgun1 = false;
-                            // m_playerWep = currentWep.NETGUN;
-                            break;
-                        }
-                }
-            }
-            else
-            {
-                gun1.SetActive(false);
-                gun2.SetActive(false);
+                case true:
+                    {
+                        gun1.SetActive(true);
+                        gun2.SetActive(false);
+                        isgun1 = true;
+                        //m_playerWep = currentWep.TASER;
+                        break;
+                    }
+                case false:
+                    {
+                        gun1.SetActive(false);
+                        gun2.SetActive(true);
+                        isgun1 = false;
+                        // m_playerWep = currentWep.NETGUN;
+                        break;
+                    }
             }
         }
     }
 
     private void PlayerCanMount()
     {
-
-        int x = Screen.width / 2;
-        int y = Screen.height / 2;
-        RaycastHit hit;
-
-        Ray ray = m_FPScam.ScreenPointToRay(new Vector3(x, y));
-
-        Debug.DrawRay(ray.origin, ray.direction * 1000, new Color(1f, 0.922f, 0.016f, 1f));
-
-        if (Physics.Raycast(ray,out hit,5))
+        if (m_bPlayerMounted == false)
         {
-            if (hit.transform.tag == "ceph")
+            int x = Screen.width / 2;
+            int y = Screen.height / 2;
+            RaycastHit hit;
+
+            Ray ray = m_FPScam.ScreenPointToRay(new Vector3(x, y));
+
+            Debug.DrawRay(ray.origin, ray.direction * 1000, new Color(1f, 0.922f, 0.016f, 1f));
+
+            if (Physics.Raycast(ray, out hit, 5))
             {
-                print("ATTEMPTED TO MOUNT THE CEPH");
-
-                this.transform.position = hit.transform.position;
-
-                if (m_bPlayerMounted == false)
+                if (hit.transform.tag == "ceph")
                 {
-                    HandlePlayerGun(true, true);
-                }
-                else
-                {
-                    HandlePlayerGun(true, false);
-                }
+                    print("ATTEMPTED TO MOUNT THE CEPH");
 
-                switch (m_bPlayerMounted)
-                {
-                    case true:
-                        m_bPlayerMounted = false;
-                        UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController.m_bPlayerIsMounted = false;
-                        m_FPScam.enabled = true;
-                        m_mountedCam.enabled = false;
-                        break;
-                    case false:
-                        m_bPlayerMounted = true;
-                        UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController.m_bPlayerIsMounted = true;
-                        m_FPScam.enabled = false;
-                        m_mountedCam.enabled = true;
-                        break;
+                    this.transform.position = hit.transform.position;
+
+
+                    // Deactivate guns
+                    gun1.SetActive(false);
+                    gun2.SetActive(false);
+
+                    m_bPlayerMounted = true;
+                    UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController.m_bPlayerIsMounted = true;
+                    m_FPScam.enabled = false;
+                    m_mountedCam.enabled = true;
                 }
             }
+        }
+        else // on dismount
+        {
+            this.transform.position = Ceph.transform.position;
+            m_bPlayerMounted = false;
+            UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController.m_bPlayerIsMounted = false;
+            m_FPScam.enabled = true;
+            m_mountedCam.enabled = false;
+
+            // enable player's gun
+            HandlePlayerGun(true);
         }
     }
 }
