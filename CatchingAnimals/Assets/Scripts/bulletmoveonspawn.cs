@@ -14,7 +14,7 @@ public class bulletmoveonspawn : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         this.transform.Translate(Vector3.forward * movementspeed * Time.deltaTime);
-        if (PlayerHandler.isgun1 == false)
+        if (PlayerHandler.isgun1 == false) // player is using net gun - then we need to scale the quad up
         {
             if (scale < 15)
             {
