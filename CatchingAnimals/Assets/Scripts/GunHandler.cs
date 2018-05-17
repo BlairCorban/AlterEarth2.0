@@ -6,7 +6,7 @@ public class GunHandler : MonoBehaviour {
 
     enum compare {NETGUN, TASER };
     public Transform[] trself;
-    public GameObject prefab;
+    public GameObject[] prefab;
     // Use this for initialization
     void Start ()
     {
@@ -27,7 +27,7 @@ public class GunHandler : MonoBehaviour {
                         // if (PlayerHandler.m_playerWep == 0)
                         if (PlayerHandler.isgun1 == true)
                         {
-                            Instantiate(prefab, trself[0].position, trself[0].rotation);
+                            Instantiate(prefab[0], trself[0].position, trself[0].rotation);
                             PlayerHandler.AmmoInt -= 1;
                             Debug.Log(PlayerHandler.AmmoInt);
                             Debug.Log("batteries: " + PlayerHandler.batteries);
@@ -38,7 +38,7 @@ public class GunHandler : MonoBehaviour {
                 }
                 else
                 {
-                    Instantiate(prefab, trself[1].position, trself[1].rotation);
+                    Instantiate(prefab[1], trself[1].position, trself[1].rotation);
                     print("SPAWNNET");
                     PlayerHandler.canfire = false;
                     Invoke("firerate", .5f);
