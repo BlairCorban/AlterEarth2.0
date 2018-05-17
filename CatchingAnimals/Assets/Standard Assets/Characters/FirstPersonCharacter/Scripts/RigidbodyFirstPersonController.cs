@@ -8,6 +8,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof (CapsuleCollider))]
     public class RigidbodyFirstPersonController : MonoBehaviour
     {
+
+		public static bool m_bPlayerIsMounted;
         [Serializable]
         public class MovementSettings
         {
@@ -78,6 +80,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 
         public Camera cam;
+		public Camera m_mountedCam;
         public MovementSettings movementSettings = new MovementSettings();
         public MouseLook mouseLook = new MouseLook();
         public AdvancedSettings advancedSettings = new AdvancedSettings();
@@ -123,17 +126,26 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_RigidBody = GetComponent<Rigidbody>();
             m_Capsule = GetComponent<CapsuleCollider>();
             mouseLook.Init (transform, cam.transform);
+			m_bPlayerIsMounted = false;
+			m_mountedCam.enabled = false;
         }
 
 
         private void Update()
         {
-            RotateView();
+			if (m_bPlayerIsMounted == false) {
+				RotateView ();
 
-            if (CrossPlatformInputManager.GetButtonDown("Jump") && !m_Jump)
-            {
-                m_Jump = true;
-            }
+				if (CrossPlatformInputManager.GetButtonDown ("Jump") && !m_Jump) {
+					m_Jump = true;
+				}
+			} else {
+				if (cam.enabled) {
+					cam.enabled = false;
+					m_mountedCam.enabled = true;
+				}
+				RotateView ();
+			}
         }
 
 
@@ -211,14 +223,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private Vector2 GetInput()
         {
-            
-            Vector2 input = new Vector2
-                {
-                    x = CrossPlatformInputManager.GetAxis("Horizontal"),
-                    y = CrossPlatformInputManager.GetAxis("Vertical")
-                };
-			movementSettings.UpdateDesiredTargetSpeed(input);
-            return input;
+			if (m_bPlayerIsMounted == false) {
+				Vector2 input = new Vector2 {
+					x = CrossPlatformInputManager.GetAxis ("Horizontal"),
+					y = CrossPlatformInputManager.GetAxis ("Vertical")
+				};
+				movementSettings.UpdateDesiredTargetSpeed (input);
+				return input;
+			} else {
+				Vector2 err = new Vector2 (0, 0);
+				return err;
+			}
         }
 
 
@@ -230,7 +245,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // get the rotation before it's changed
             float oldYRotation = transform.eulerAngles.y;
 
-            mouseLook.LookRotation (transform, cam.transform);
+			if (m_bPlayerIsMounted == false) {
+				mouseLook.LookRotation (transform, cam.transform);
+			}else{
+				if (m_mountedCam.enabled) {
+					mouseLook.LookRotation (transform, m_mountedCam.transform);
+				}
+			}
 
             if (m_IsGrounded || advancedSettings.airControl)
             {

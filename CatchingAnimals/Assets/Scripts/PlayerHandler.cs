@@ -11,6 +11,7 @@ public class PlayerHandler : MonoBehaviour
     public static int capturedmobs;
     public static bool isOsp;
     public static int batteries;
+    public static bool m_bPlayerMounted;
     public static bool canfire;
     public static bool isospcaptured;
     public static int woodInventory;
@@ -27,10 +28,15 @@ public class PlayerHandler : MonoBehaviour
     public Text ammotxt;
     public Text batteriestxt;
     public int speedMultiplier;
-    public enum TOD {DAY, NIGHT};
-    public enum currentWep {TASER, NETGUN };
+    public enum TOD { DAY, NIGHT };
+    public enum currentWep { TASER, NETGUN };
     public static currentWep m_playerWep;
     public static TOD m_timeOfDay;
+
+    private Camera m_FPScam;
+    private Camera m_mountedCam;
+    private Ray raycast;
+
     // Use this for initialization
     void Start()
     {
@@ -43,6 +49,7 @@ public class PlayerHandler : MonoBehaviour
         AmmoInt = 6;
         isgun1 = false;
         isospcaptured = false;
+        m_bPlayerMounted = false;
         woodInventory = 0;
         electronicsInventory = 0;
         fruitInventory = 0;
@@ -50,6 +57,10 @@ public class PlayerHandler : MonoBehaviour
         //m_playerWep = currentWep.NETGUN;
         gun1.SetActive(false);
         gun2.SetActive(true);
+        m_FPScam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        m_mountedCam = GameObject.FindGameObjectWithTag("cephcamera").GetComponent<Camera>();
+        m_FPScam.enabled = true;
+        m_mountedCam.enabled = false;
     }
 
     // Update is called once per frame
@@ -60,7 +71,7 @@ public class PlayerHandler : MonoBehaviour
         ammotxt.text = AmmoInt.ToString();
         batteriestxt.text = batteries.ToString();
 
-        if(Sun.transform.position.y < 0)
+        if (Sun.transform.position.y < 0)
         {
             m_timeOfDay = TOD.NIGHT;
         }
@@ -73,6 +84,22 @@ public class PlayerHandler : MonoBehaviour
 
 
         if (Input.GetKeyDown(KeyCode.Q))
+        {
+            HandlePlayerGun(false, false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            //Determine whether there is an object that the player can enter, or hop onto
+            PlayerCanMount();
+            print("F PRESSED");
+
+        }
+    }
+
+    private void HandlePlayerGun(bool _bTurnGunsOff, bool _bReEnableGuns)
+    {
+        if (_bTurnGunsOff == false)
         {
             switch (isgun1)
             {
@@ -92,6 +119,83 @@ public class PlayerHandler : MonoBehaviour
                         // m_playerWep = currentWep.NETGUN;
                         break;
                     }
+            }
+        }
+        else
+        {
+            if (_bReEnableGuns == false)
+            {
+                switch (isgun1)
+                {
+                    case true:
+                        {
+                            gun1.SetActive(false);
+                            gun2.SetActive(true);
+                            isgun1 = true;
+                            //m_playerWep = currentWep.TASER;
+                            break;
+                        }
+                    case false:
+                        {
+                            gun1.SetActive(true);
+                            gun2.SetActive(false);
+                            isgun1 = false;
+                            // m_playerWep = currentWep.NETGUN;
+                            break;
+                        }
+                }
+            }
+            else
+            {
+                gun1.SetActive(false);
+                gun2.SetActive(false);
+            }
+        }
+    }
+
+    private void PlayerCanMount()
+    {
+
+        int x = Screen.width / 2;
+        int y = Screen.height / 2;
+        RaycastHit hit;
+
+        Ray ray = m_FPScam.ScreenPointToRay(new Vector3(x, y));
+
+        Debug.DrawRay(ray.origin, ray.direction * 1000, new Color(1f, 0.922f, 0.016f, 1f));
+
+        if (Physics.Raycast(ray,out hit,5))
+        {
+            if (hit.transform.tag == "ceph")
+            {
+                print("ATTEMPTED TO MOUNT THE CEPH");
+
+                this.transform.position = hit.transform.position;
+
+                if (m_bPlayerMounted == false)
+                {
+                    HandlePlayerGun(true, true);
+                }
+                else
+                {
+                    HandlePlayerGun(true, false);
+                }
+
+                switch (m_bPlayerMounted)
+                {
+                    case true:
+                        m_bPlayerMounted = false;
+                        UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController.m_bPlayerIsMounted = false;
+                        m_FPScam.enabled = true;
+                        m_mountedCam.enabled = false;
+                        break;
+                    case false:
+                        m_bPlayerMounted = true;
+                        UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController.m_bPlayerIsMounted = true;
+                        m_FPScam.enabled = false;
+                        m_mountedCam.enabled = true;
+                        break;
+                }
             }
         }
     }

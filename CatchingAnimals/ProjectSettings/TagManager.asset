@@ -9,6 +9,8 @@ TagManager:
   - creature
   - despawner
   - osprock
+  - ceph
+  - cephcamera
   layers:
   - Default
   - TransparentFX
