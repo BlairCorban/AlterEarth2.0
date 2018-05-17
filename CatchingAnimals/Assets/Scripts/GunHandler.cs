@@ -55,8 +55,6 @@ public class GunHandler : MonoBehaviour {
                             PlayerHandler.canfire = false;
                             Invoke("firerate", .5f);
                             PlayAudioForGuns();
-                          //  m_asPlayAudio.clip = m_acNetGunClip;
-                          //  m_asPlayAudio.Play();
                         }
                     }
                 }
@@ -65,10 +63,8 @@ public class GunHandler : MonoBehaviour {
                     Instantiate(prefab[1], trself[1].position, trself[1].rotation);
                     print("SPAWNNET");
                     PlayerHandler.canfire = false;
-                    Invoke("firerate", .5f);
+                    Invoke("firerate", 1.5f);
                     PlayAudioForGuns();
-                    // m_asPlayAudio.clip = m_acNetGunClip;
-                    // m_asPlayAudio.Play();
                 }
                
             }
