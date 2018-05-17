@@ -25,6 +25,7 @@ public class collectItem : MonoBehaviour {
                 {
                     Destroy(objectHit.gameObject);
                     PlayerHandler.woodInventory += 1;
+                    PlayerHandler.SendSimplePopup("You collected some wood!");
                 }
                 else if(objectHit.name == "house")
                 {
@@ -33,23 +34,28 @@ public class collectItem : MonoBehaviour {
 
                         objectHit.localScale = objectHit.localScale + objectHit.localScale;
                         PlayerHandler.woodInventory -= 5;
+                        PlayerHandler.SendSimplePopup("You built a house? That cost 5 wood.");
                     }
                 }
                 if (objectHit.name == "UFO" || objectHit.name == "UFO(Clone)")
                 {
                     Destroy(objectHit.gameObject);
                     PlayerHandler.electronicsInventory += 1;
+                    PlayerHandler.SendSimplePopup("You collected some electronics!");
                 }
                 if (objectHit.name == "Fruit")
                 {
                     Destroy(objectHit.gameObject);
                     PlayerHandler.fruitInventory += 1;
+                    PlayerHandler.SendSimplePopup("You picked up a fruit! You can tame the Ceph using this...");
                 }
                 if (objectHit.name == "Ceph")
                 {
                     if (PlayerHandler.fruitInventory >= 1)
                     {
                         saddle.SetActive(true);
+                        PlayerHandler.m_bPlayerCanMount = true;
+                        PlayerHandler.SendSimplePopup("The Ceph has been succesfully tamed using a fruit!");
                     }
                 }
                 

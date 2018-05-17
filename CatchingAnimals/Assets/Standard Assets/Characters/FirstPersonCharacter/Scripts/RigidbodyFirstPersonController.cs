@@ -133,8 +133,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void Update()
         {
+			RotateView ();
 			if (m_bPlayerIsMounted == false) {
-				RotateView ();
 
 				if (CrossPlatformInputManager.GetButtonDown ("Jump") && !m_Jump) {
 					m_Jump = true;
@@ -144,7 +144,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
 					cam.enabled = false;
 					m_mountedCam.enabled = true;
 				}
-				RotateView ();
 			}
         }
 
