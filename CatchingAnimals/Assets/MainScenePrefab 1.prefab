@@ -11480,7 +11480,9 @@ GameObject:
   - component: {fileID: 114796315358853742}
   - component: {fileID: 135051945361670028}
   - component: {fileID: 114063425523092952}
+  - component: {fileID: 114954565463867452}
   - component: {fileID: 114626330962781516}
+  - component: {fileID: 114937929197527472}
   - component: {fileID: 114090601215286368}
   - component: {fileID: 82176248940699394}
   m_Layer: 0
@@ -45107,6 +45109,23 @@ MonoBehaviour:
   wanderRadius: 20
   wanderTimer: 5
   agent: {fileID: 195004123897087138}
+--- !u!114 &114937929197527472
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1956122206126434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e326e15b2a55f474e8fe6e4be02d6898, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questsname: []
+  quests: []
+  current: 
+  max: 
+  home: {fileID: 1744701910983820}
+  questbook: {fileID: 1966443876422668, guid: 82df0d2a877c2254983921fe89b1da55, type: 2}
 --- !u!114 &114942699974883042
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -45121,6 +45140,19 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
+--- !u!114 &114954565463867452
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1956122206126434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd18d6fbc320a50448b9ac12a73c6e94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pop: {fileID: 1645775689714672, guid: df270df407572d64aa27f4865388276c, type: 2}
+  home: {fileID: 1744701910983820}
 --- !u!114 &114973503854595180
 MonoBehaviour:
   m_ObjectHideFlags: 1

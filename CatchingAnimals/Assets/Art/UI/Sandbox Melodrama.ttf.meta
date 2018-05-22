@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 11d5458ef6c061148a924f6f7de386d5
+timeCreated: 1526821967
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Sandbox Melodrama
+  fontNames:
+  - Sandbox Melodrama
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -5,6 +5,7 @@ using UnityEngine;
 public class collectItem : MonoBehaviour {
     public Camera camera;
     public GameObject saddle;
+	testpopup dummy;
 	// Use this for initialization
 	void Start () {
 		
@@ -23,7 +24,9 @@ public class collectItem : MonoBehaviour {
                 // if you press e on a wood destroy item and add 1 to wood value
                 if(objectHit.name == "wood" || objectHit.name == "wood(Clone)")
                 {
-                    Destroy(objectHit.gameObject);
+					dummy = FindObjectOfType<testpopup>();
+					dummy.lauchpop(1);
+					Destroy(objectHit.gameObject);
                     PlayerHandler.woodInventory += 1;
                     PlayerHandler.SendSimplePopup("You collected some wood!");
                 }
