@@ -65,7 +65,7 @@ public class PlayerHandler : MonoBehaviour
         m_popupsToDisplay.Add("");
         for (int i = 0; i < 10; i++)
         {
-            m_sGlobalSimplePopup[i].text = "";
+            m_sGlobalSimplePopup[i].text = "w";
         }
         //m_playerWep = currentWep.NETGUN;
         gun1.SetActive(false);
