@@ -19,7 +19,7 @@ public class respawnosprey : MonoBehaviour {
             {
                 if(!GetComponent<MeshRenderer>().isVisible)
                 {
-                    Instantiate(ospreyprefab,new Vector3(-167.7919f, 9.39f, -32.39216f), ospreyprefab.transform.rotation);
+                    Instantiate(ospreyprefab,new Vector3(50.57257f, 2.34f, -208.6082f), ospreyprefab.transform.rotation);
                     PlayerHandler.isOsp = true;
                 }
             }

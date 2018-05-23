@@ -1,0 +1,245 @@
+fileFormatVersion: 2
+guid: 23f9d04a54d317341804865fdaba79c1
+timeCreated: 1526976973
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: pCube137
+    100004: polySurface172
+    100006: polySurface177
+    100008: polySurface184
+    100010: polySurface189
+    100012: polySurface193
+    100014: polySurface218
+    100016: polySurface245
+    100018: polySurface249
+    100020: polySurface263
+    100022: polySurface268
+    100024: polySurface308
+    100026: polySurface309
+    100028: polySurface365
+    100030: polySurface368
+    100032: polySurface371
+    100034: polySurface374
+    100036: polySurface375
+    100038: polySurface376
+    100040: polySurface377
+    100042: polySurface378
+    100044: polySurface379
+    100046: polySurface380
+    100048: polySurface382
+    100050: polySurface383
+    100052: polySurface386
+    100054: polySurface387
+    100056: polySurface388
+    100058: polySurface389
+    100060: polySurface390
+    400000: //RootNode
+    400002: pCube137
+    400004: polySurface172
+    400006: polySurface177
+    400008: polySurface184
+    400010: polySurface189
+    400012: polySurface193
+    400014: polySurface218
+    400016: polySurface245
+    400018: polySurface249
+    400020: polySurface263
+    400022: polySurface268
+    400024: polySurface308
+    400026: polySurface309
+    400028: polySurface365
+    400030: polySurface368
+    400032: polySurface371
+    400034: polySurface374
+    400036: polySurface375
+    400038: polySurface376
+    400040: polySurface377
+    400042: polySurface378
+    400044: polySurface379
+    400046: polySurface380
+    400048: polySurface382
+    400050: polySurface383
+    400052: polySurface386
+    400054: polySurface387
+    400056: polySurface388
+    400058: polySurface389
+    400060: polySurface390
+    2100000: house_wall_mat
+    2100002: House_Wood_Mat
+    2100004: lantern_mat
+    2100006: House_Door_Mat
+    2100008: Wood_Floor_Mat
+    2100010: House_Window_Mat
+    2100012: Chain_Mat
+    2100014: Wood_Fence_Mat
+    2100016: House_Post_Mat
+    2300000: polySurface172
+    2300002: polySurface177
+    2300004: polySurface184
+    2300006: polySurface189
+    2300008: polySurface193
+    2300010: polySurface218
+    2300012: polySurface245
+    2300014: polySurface249
+    2300016: polySurface263
+    2300018: polySurface268
+    2300020: polySurface308
+    2300022: polySurface309
+    2300024: polySurface365
+    2300026: polySurface368
+    2300028: polySurface371
+    2300030: polySurface374
+    2300032: polySurface375
+    2300034: polySurface376
+    2300036: polySurface377
+    2300038: polySurface378
+    2300040: polySurface379
+    2300042: polySurface380
+    2300044: polySurface382
+    2300046: polySurface383
+    2300048: polySurface386
+    2300050: polySurface387
+    2300052: polySurface388
+    2300054: polySurface389
+    2300056: polySurface390
+    3300000: polySurface172
+    3300002: polySurface177
+    3300004: polySurface184
+    3300006: polySurface189
+    3300008: polySurface193
+    3300010: polySurface218
+    3300012: polySurface245
+    3300014: polySurface249
+    3300016: polySurface263
+    3300018: polySurface268
+    3300020: polySurface308
+    3300022: polySurface309
+    3300024: polySurface365
+    3300026: polySurface368
+    3300028: polySurface371
+    3300030: polySurface374
+    3300032: polySurface375
+    3300034: polySurface376
+    3300036: polySurface377
+    3300038: polySurface378
+    3300040: polySurface379
+    3300042: polySurface380
+    3300044: polySurface382
+    3300046: polySurface383
+    3300048: polySurface386
+    3300050: polySurface387
+    3300052: polySurface388
+    3300054: polySurface389
+    3300056: polySurface390
+    4300000: polySurface309
+    4300002: polySurface249
+    4300004: polySurface172
+    4300006: polySurface193
+    4300008: polySurface268
+    4300010: polySurface263
+    4300012: polySurface184
+    4300014: polySurface218
+    4300016: polySurface308
+    4300018: polySurface189
+    4300020: polySurface245
+    4300022: polySurface365
+    4300024: polySurface371
+    4300026: polySurface374
+    4300028: polySurface177
+    4300030: polySurface375
+    4300032: polySurface376
+    4300034: polySurface377
+    4300036: polySurface378
+    4300038: polySurface379
+    4300040: polySurface368
+    4300042: polySurface380
+    4300044: polySurface382
+    4300046: polySurface383
+    4300048: polySurface386
+    4300050: polySurface387
+    4300052: polySurface388
+    4300054: polySurface389
+    4300056: polySurface390
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

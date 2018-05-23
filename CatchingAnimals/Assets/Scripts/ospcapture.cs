@@ -33,7 +33,7 @@ public class ospcapture : MonoBehaviour
             if (isStunned)
             {
                 Debug.Log("captured osp");
-                tr.position = new Vector3(-40.39743f, 9.39f, 79.8418f);
+                tr.position = new Vector3(-40.8f, 2.34f, 79.8f);
                 isStunned = false;
                 cap.enabled = false;
                 zzz.SetActive(false);
