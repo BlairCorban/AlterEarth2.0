@@ -12,10 +12,13 @@ public class captureUFO : MonoBehaviour {
     public bool isStunned;
     public GameObject pen1;
     public Rigidbody rb;
-	// Update is called once per frame
+    [SerializeField] private AudioClip m_acCaptureUFOSound;
+    private AudioSource m_asPlayAudio;
+    // Update is called once per frame
     void Update()
     {
-
+        m_asPlayAudio = GetComponent<AudioSource>();
+        m_asPlayAudio.clip = m_acCaptureUFOSound;
     }
 
 
@@ -30,6 +33,7 @@ public class captureUFO : MonoBehaviour {
             fleee.enabled = false;
             sph.enabled = false;
             isStunned = true;
+            m_asPlayAudio.Play();
         }
     }
 }

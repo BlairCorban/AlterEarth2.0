@@ -568,6 +568,7 @@ MonoBehaviour:
   fleee: {fileID: 114335512597840028}
   isStunned: 0
   pen1: {fileID: 0}
+  m_acCaptureSound: {fileID: 8300000, guid: bd07b5d9063d03c49b915e27fd4ff6b4, type: 3}
 --- !u!114 &114232788918031304
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -596,7 +597,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 195045582025166020}
   creature: {fileID: 114870039077827742}
-  despawner: {x: 0, y: 0, z: 0}
 --- !u!114 &114870039077827742
 MonoBehaviour:
   m_ObjectHideFlags: 1

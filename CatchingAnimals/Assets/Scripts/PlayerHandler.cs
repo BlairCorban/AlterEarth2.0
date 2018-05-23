@@ -66,11 +66,6 @@ public class PlayerHandler : MonoBehaviour
         electronicsInventory = 0;
         fruitInventory = 0;
         m_timeOfDay = TOD.DAY;
-        m_popupsToDisplay.Add("");
-        for (int i = 0; i < 10; i++)
-        {
-            m_sGlobalSimplePopup[i].text = "w";
-        }
         m_sHitResult = "";
         gun1.SetActive(false);
         gun2.SetActive(true);
@@ -106,21 +101,21 @@ public class PlayerHandler : MonoBehaviour
                         m_tPopup.text = "Press 'e' to use a fruit on the ceph and tame it.";
                     }
                 }
-                DisplayPopup(m_tPopup.text, 5.0f);
+                DisplayPopup(m_tPopup.text, 3.0f);
                 m_sLastHit = m_sHitResult;
             }
             else if (m_sHitResult == "FRUIT" && m_sLastHit != m_sHitResult)
             {
 
                 m_tPopup.text = "Press 'e' to pick up the fruit.";
-                DisplayPopup(m_tPopup.text, 5.0f);
+                DisplayPopup(m_tPopup.text, 3.0f);
                 m_sLastHit = m_sHitResult;
             }
             else if (m_sHitResult == "WOOD" && m_sLastHit != m_sHitResult)
             {
 
                 m_tPopup.text = "Press 'e' to pick up some wood.";
-                DisplayPopup(m_tPopup.text, 5.0f);
+                DisplayPopup(m_tPopup.text, 3.0f);
                 m_sLastHit = m_sHitResult;
             }
             m_sHitResult = "";

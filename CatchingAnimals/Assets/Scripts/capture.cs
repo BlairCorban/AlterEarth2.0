@@ -13,11 +13,15 @@ public class capture : MonoBehaviour {
     public flee fleee;
     public bool isStunned;
     public GameObject pen1;
-	// Use this for initialization
-	void Start () {
+    [SerializeField] private AudioClip m_acCaptureSound;
+    private AudioSource m_asPlayAudio;
+    // Use this for initialization
+    void Start () {
+        m_asPlayAudio = GetComponent<AudioSource>();
         isStunned = false;
         pen1 = GameObject.Find("Fence");
-	}
+        m_asPlayAudio.clip = m_acCaptureSound;
+    }
 	void Update()
     {
         if (!(anim.GetCurrentAnimatorStateInfo(0).IsName("Walking")))
@@ -52,6 +56,7 @@ public class capture : MonoBehaviour {
             fleee.enabled = false;
             sph.enabled = false;
             isStunned = true;
+            m_asPlayAudio.Play();
         }
         if(other.tag == "Player")
         {

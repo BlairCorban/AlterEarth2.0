@@ -11,8 +11,7 @@ public class MountObject : MonoBehaviour {
     void Start ()
     {
         m_Direction = new Vector3(0, 0, 0);
-        m_Movement = 30;
-        cam = GameObject.FindGameObjectWithTag("cephcamera").GetComponent<Camera>();
+		m_Movement = 30;
     }
 	
 	// Update is called once per frame

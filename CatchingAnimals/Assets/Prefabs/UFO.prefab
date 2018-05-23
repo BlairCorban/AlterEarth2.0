@@ -494,6 +494,7 @@ MonoBehaviour:
   isStunned: 0
   pen1: {fileID: 0}
   rb: {fileID: 54230765169033254}
+  m_acCaptureUFOSound: {fileID: 8300000, guid: bd07b5d9063d03c49b915e27fd4ff6b4, type: 3}
 --- !u!135 &135211025517704376
 SphereCollider:
   m_ObjectHideFlags: 1
