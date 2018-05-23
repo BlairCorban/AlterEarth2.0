@@ -40,6 +40,18 @@ public class popupscript : MonoBehaviour {
 		case "Wood":
 			picture.sprite = textures[0];
 			break;
+        case "Bush":
+			picture.sprite = textures[1];
+			break;
+        case "Fruit":
+			picture.sprite = textures[2];
+			break;
+        case "Osprey":
+			picture.sprite = textures[3];
+			break;
+        case "UFO":
+			picture.sprite = textures[4];
+			break;
 		default:
 			break;
 		}

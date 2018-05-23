@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class captureUFO : MonoBehaviour {
-
+    testpopup popup;
     public CreatureController creature;
     public NavMeshAgent agent;
     public SphereCollider sph;
@@ -17,6 +17,7 @@ public class captureUFO : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        popup = FindObjectOfType<testpopup>();
         m_asPlayAudio = GetComponent<AudioSource>();
         m_asPlayAudio.clip = m_acCaptureUFOSound;
     }
@@ -26,7 +27,7 @@ public class captureUFO : MonoBehaviour {
     {
         if (other.tag == "Bullet")
         {
-            Debug.Log("Creature Stunned");
+            popup.makePop("UFO", "You Captured a UFO And Collected Its Electronics!");
             creature.enabled = false;
             rb.useGravity = true;
             agent.enabled = false;

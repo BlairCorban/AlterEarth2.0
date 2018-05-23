@@ -11,17 +11,18 @@ public class ospcapture : MonoBehaviour
     public Animator anim;
     public fleeosp fleee;
     public bool isStunned;
+    testpopup popup;
     public GameObject zzz;
     // Use this for initialization
     void Start()
     {
+        popup = FindObjectOfType<testpopup>();
         isStunned = false;
     }
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Bullet")
         {
-            Debug.Log("osprey Stunned");
             fleee.enabled = false;
             sph.enabled = false;
             isStunned = true;
@@ -32,7 +33,8 @@ public class ospcapture : MonoBehaviour
         {
             if (isStunned)
             {
-                Debug.Log("captured osp");
+                popup.makePop("Osprey", "WOW, You Captured The Legendary Osprey!, Go Check It Out In It's Pen Back Home!");
+                PlayerHandler.isOspCap = true;
                 tr.position = new Vector3(-40.8f, 2.34f, 79.8f);
                 isStunned = false;
                 cap.enabled = false;

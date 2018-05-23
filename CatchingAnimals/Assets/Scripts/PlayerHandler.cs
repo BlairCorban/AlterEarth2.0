@@ -18,6 +18,9 @@ public class PlayerHandler : MonoBehaviour
     public static int woodInventory;
     public static int electronicsInventory;
     public static int fruitInventory;
+    public static bool isBushCap;
+    public static bool isUFOCap;
+    public static bool isOspCap;
     public GameObject gun1;
     public GameObject gun2;
     public GameObject Sun;
@@ -52,6 +55,9 @@ public class PlayerHandler : MonoBehaviour
     {
         bushmobs = 0;
         UFOmobs = 0;
+        isBushCap = false;
+        isOspCap = false;
+        isUFOCap = false;
         capturedmobs = 0;
         isOsp = true;
         batteries = 1;
@@ -80,6 +86,9 @@ public class PlayerHandler : MonoBehaviour
         idol.text = electronicsInventory.ToString();
         ammotxt.text = AmmoInt.ToString();
         batteriestxt.text = batteries.ToString();
+
+
+        
 
         DetermineObjInView(true); // for tooltips
         if (m_sHitResult != "") // means that an obj was picked up in the  previous raycast

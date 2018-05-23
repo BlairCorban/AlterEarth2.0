@@ -13,10 +13,12 @@ public class capture : MonoBehaviour {
     public flee fleee;
     public bool isStunned;
     public GameObject pen1;
+    testpopup popup;
     [SerializeField] private AudioClip m_acCaptureSound;
     private AudioSource m_asPlayAudio;
     // Use this for initialization
     void Start () {
+        popup = FindObjectOfType<testpopup>();
         m_asPlayAudio = GetComponent<AudioSource>();
         isStunned = false;
         pen1 = GameObject.Find("Fence");
@@ -49,7 +51,6 @@ public class capture : MonoBehaviour {
     {
         if(other.tag == "Bullet")
         {
-            Debug.Log("Creature Stunned");
             anim.Play("idletosleep", -1,0);
             creature.enabled = false;
             agent.enabled = false;
@@ -62,6 +63,8 @@ public class capture : MonoBehaviour {
         {
             if(isStunned)
             {
+                popup.makePop("Bush", "You Captured a Bush Monster! Go See It In Your Holding Pen!");
+                PlayerHandler.isBushCap = true;
                 tr.position = new Vector3(pen1.transform.position.x, 0, pen1.transform.position.z);
                 creature.enabled = true;
                 agent.enabled = true;

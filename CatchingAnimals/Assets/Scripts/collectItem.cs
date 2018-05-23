@@ -5,6 +5,8 @@ using UnityEngine;
 public class collectItem : MonoBehaviour {
     public Camera camera;
     public GameObject saddle;
+    public GameObject House;
+    public GameObject bridge;
     testpopup popup;
 	// Use this for initialization
 	void Start () {
@@ -29,35 +31,68 @@ public class collectItem : MonoBehaviour {
                     popup.makePop("Wood", "You Collected Some Wood!");
                     //PlayerHandler.SendSimplePopup("You collected some wood!");
                 }
-                else if(objectHit.name == "house")
+                else if(objectHit.name == "HouseSign")
                 {
-                    if(PlayerHandler.woodInventory >= 5)
+                    if(PlayerHandler.woodInventory >= 25)
                     {
-
-                        objectHit.localScale = objectHit.localScale + objectHit.localScale;
-                        PlayerHandler.woodInventory -= 5;
-                        PlayerHandler.SendSimplePopup("You built a house? That cost 5 wood.");
+                        House.SetActive(true);
+                        PlayerHandler.woodInventory -= 25;
                     }
+                    else
+                    {
+                        popup.makePop("Wood", "Collect 25 Wood And Come Back Here To Build a House!");
+                    }
+                }
+                else if (objectHit.name == "BridgeSign")
+                {
+                    if (PlayerHandler.woodInventory >= 15)
+                    {
+                        bridge.SetActive(true);
+                        PlayerHandler.woodInventory -= 15;
+                    }
+                    else
+                    {
+                        popup.makePop("Wood", "Maybe You Could Build Something Here To Get To That Thing On The Rock Over There, Come Back With 15 Wood!");
+                    }
+                }
+                else if (objectHit.name == "CaveSign")
+                {
+                    popup.makePop("Wood", "Look At Those Symbols Above The Cave. Looks Like You Cant Enter Until You've Done Something To Do With Those Symbols!");
+                }
+                else if (objectHit.name == "Sign1")
+                {
+                    popup.makePop("Bush", "Welcome To AlterEarth, Capture Crazy Creatures and Explore The Wonderful Environment To See Everything This World has To Offer!");
+                }
+                else if (objectHit.name == "Sign2")
+                {
+                    popup.makePop("Fruit", "Shoot Creatures With Your Gun With Left Click and Capture Them By Running Over Them Or Pick Up Items By Looking At Them And Pressing E!");
+                }
+                else if (objectHit.name == "Sign3")
+                {
+                    popup.makePop("Wood", "Enjoy And Have Fun!");
                 }
                 if (objectHit.name == "UFO" || objectHit.name == "UFO(Clone)")
                 {
+                    PlayerHandler.isUFOCap = true;
                     Destroy(objectHit.gameObject);
                     PlayerHandler.electronicsInventory += 1;
-                    PlayerHandler.SendSimplePopup("You collected some electronics!");
+                    //PlayerHandler.SendSimplePopup("You collected some electronics!");
                 }
                 if (objectHit.name == "Fruit")
                 {
                     Destroy(objectHit.gameObject);
                     PlayerHandler.fruitInventory += 1;
-                    PlayerHandler.SendSimplePopup("You picked up a fruit! You can tame the Ceph using this...");
+                    popup.makePop("Fruit", "You Collected The CephFruit, I Wonder If That Big Creature W ould Appreciate This");
+                    //PlayerHandler.SendSimplePopup("You picked up a fruit! You can tame the Ceph using this...");
                 }
                 if (objectHit.name == "Ceph")
                 {
                     if (PlayerHandler.fruitInventory >= 1)
                     {
                         saddle.SetActive(true);
+                        popup.makePop("Fruit", "You Fed The CephFruit To The Cephaderm, Now It Has A Saddle, Maybe You Could Ride Him!");
                         PlayerHandler.m_bPlayerCanMount = true;
-                        PlayerHandler.SendSimplePopup("The Ceph has been succesfully tamed using a fruit!");
+                        //PlayerHandler.SendSimplePopup("The Ceph has been succesfully tamed using a fruit!");
                     }
                 }
                 
