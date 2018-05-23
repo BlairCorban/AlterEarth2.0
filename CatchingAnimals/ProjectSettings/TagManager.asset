@@ -11,6 +11,8 @@ TagManager:
   - osprock
   - ceph
   - cephcamera
+  - FRUIT
+  - WOOD
   layers:
   - Default
   - TransparentFX
