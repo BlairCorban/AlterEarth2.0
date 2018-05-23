@@ -23,16 +23,9 @@ public class testpopup : MonoBehaviour {
 			//popUp.setup ( "greem","greem Capture");
 		}
 	}
-	public void lauchpop(int num){
-		Debug.Log ("call");
-		makePop("wood", "gain wood");
-}
 	public void makePop(string name, string texts){
 		GameObject spawn = Instantiate (pop,v3,q4) ;
-		Debug.Log ("call");
 		spawn.transform.SetParent (home.transform,false);
-		Debug.Log ("call");
 		spawn.GetComponent<popupscript>().setup( name,texts);
-		Debug.Log ("call");
 	}
 }

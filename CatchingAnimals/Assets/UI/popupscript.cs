@@ -35,12 +35,12 @@ public class popupscript : MonoBehaviour {
 
 		Debug.Log ("call");
 		goal = setgoal;
+        goalName.text = goal;
 		switch (name) {
-		case "Green":
+		case "Wood":
 			picture.sprite = textures[0];
 			break;
 		default:
-			Debug.Log ("call");
 			break;
 		}
 	}

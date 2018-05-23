@@ -5,10 +5,11 @@ using UnityEngine;
 public class collectItem : MonoBehaviour {
     public Camera camera;
     public GameObject saddle;
+    testpopup popup;
 	// Use this for initialization
 	void Start () {
-		
-	}
+        popup = FindObjectOfType<testpopup>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -25,7 +26,8 @@ public class collectItem : MonoBehaviour {
                 {
                     Destroy(objectHit.gameObject);
                     PlayerHandler.woodInventory += 1;
-                    PlayerHandler.SendSimplePopup("You collected some wood!");
+                    popup.makePop("Wood", "You Collected Some Wood!");
+                    //PlayerHandler.SendSimplePopup("You collected some wood!");
                 }
                 else if(objectHit.name == "house")
                 {
