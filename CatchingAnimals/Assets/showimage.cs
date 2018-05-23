@@ -23,7 +23,7 @@ public class showimage : MonoBehaviour {
 		Maxss.text = questInfo.max[0].ToString();
 		for (int i = 1; i < questInfo.quests.Count+1; i++) {
 			GameObject spawn = Instantiate (button,v3,q4) ;
-			v3.x = v3.x - .2f;
+			//v3.x = v3.x - .2f;
 			spawn.transform.SetParent (home.transform,false);
 			spawn.GetComponent<questButton> ().placement (questInfo.questsname[i-1],i-1);
 		}
@@ -34,6 +34,8 @@ public class showimage : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.O)) {
 			Cursor.visible = false;
+			Cursor.lockState = CursorLockMode.Locked;
+
 			Destroy(gameObject);
 		}
 	}

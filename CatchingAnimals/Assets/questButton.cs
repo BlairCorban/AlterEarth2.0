@@ -25,6 +25,7 @@ public class questButton : MonoBehaviour {
 	public void placement(string name,int place){
 
 		loctation = place;
+		transform.Translate (-400,-30.5f*loctation, 0);
 		owntext.text = name;
 	}
 }

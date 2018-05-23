@@ -23,8 +23,10 @@ public class quest : MonoBehaviour {
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.P)){
 			//create game object quest
-			GameObject spawn = Instantiate (questbook,v3,q4) ;
+			Cursor.lockState = CursorLockMode.None;
 			Cursor.visible = true;
+
+			GameObject spawn = Instantiate (questbook,v3,q4) ;
 			spawn.transform.SetParent (home.transform,false);
 		}	
 	}
